@@ -2,6 +2,19 @@
   "version": 3,
   "targets": {
     "net7.0": {
+      "LiteDB/5.0.16": {
+        "type": "package",
+        "compile": {
+          "lib/netstandard2.0/LiteDB.dll": {
+            "related": ".xml"
+          }
+        },
+        "runtime": {
+          "lib/netstandard2.0/LiteDB.dll": {
+            "related": ".xml"
+          }
+        }
+      },
       "Microsoft.AspNetCore.Diagnostics.EntityFrameworkCore/7.0.4": {
         "type": "package",
         "dependencies": {
@@ -268,10 +281,42 @@
         "build": {
           "buildTransitive/net6.0/_._": {}
         }
+      },
+      "Nanoid/2.1.0": {
+        "type": "package",
+        "compile": {
+          "lib/netstandard2.1/Nanoid.dll": {
+            "related": ".xml"
+          }
+        },
+        "runtime": {
+          "lib/netstandard2.1/Nanoid.dll": {
+            "related": ".xml"
+          }
+        }
       }
     }
   },
   "libraries": {
+    "LiteDB/5.0.16": {
+      "sha512": "DMUYdRlgNbrSlyWzdQ4GqW934ntNHBGWMTNQlOL4hWz8WnveY6V9ZGo2ntPrSATW7kat8v5VoCXGSzToPiwZWw==",
+      "type": "package",
+      "path": "litedb/5.0.16",
+      "files": [
+        ".nupkg.metadata",
+        ".signature.p7s",
+        "LICENSE",
+        "icon_64x64.png",
+        "lib/net45/LiteDB.dll",
+        "lib/net45/LiteDB.xml",
+        "lib/netstandard1.3/LiteDB.dll",
+        "lib/netstandard1.3/LiteDB.xml",
+        "lib/netstandard2.0/LiteDB.dll",
+        "lib/netstandard2.0/LiteDB.xml",
+        "litedb.5.0.16.nupkg.sha512",
+        "litedb.nuspec"
+      ]
+    },
     "Microsoft.AspNetCore.Diagnostics.EntityFrameworkCore/7.0.4": {
       "sha512": "fWSKKaDyxP5OvIhGvSBDGsMRPCFC4mW+Fd63bILrzg/tEjkCpcKj245NOzl+fpsRcQP6OhM2vj9KhdtPu89x+g==",
       "type": "package",
@@ -651,12 +696,31 @@
         "microsoft.extensions.primitives.nuspec",
         "useSharedDesignerContext.txt"
       ]
+    },
+    "Nanoid/2.1.0": {
+      "sha512": "V0eSnsq+Oeqf9uVPBH02kYE5p92s6Revskt4Cmqg3DIsiDoqrKKdlmqXvaFaehO3pS1Osu9BTtl3lMSRqPlbzw==",
+      "type": "package",
+      "path": "nanoid/2.1.0",
+      "files": [
+        ".nupkg.metadata",
+        ".signature.p7s",
+        "lib/net45/Nanoid.dll",
+        "lib/net45/Nanoid.xml",
+        "lib/netstandard2.0/Nanoid.dll",
+        "lib/netstandard2.0/Nanoid.xml",
+        "lib/netstandard2.1/Nanoid.dll",
+        "lib/netstandard2.1/Nanoid.xml",
+        "nanoid.2.1.0.nupkg.sha512",
+        "nanoid.nuspec"
+      ]
     }
   },
   "projectFileDependencyGroups": {
     "net7.0": [
+      "LiteDB >= 5.0.16",
       "Microsoft.AspNetCore.Diagnostics.EntityFrameworkCore >= 7.0.4",
-      "Microsoft.EntityFrameworkCore.InMemory >= 7.0.4"
+      "Microsoft.EntityFrameworkCore.InMemory >= 7.0.4",
+      "NanoId >= 2.1.0"
     ]
   },
   "packageFolders": {
@@ -665,19 +729,21 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "D:\\projects\\csharp\\todoapi\\TodoApi\\TodoApi.csproj",
+      "projectUniqueName": "D:\\project\\csharp\\TodoApi\\TodoApi.csproj",
       "projectName": "TodoApi",
-      "projectPath": "D:\\projects\\csharp\\todoapi\\TodoApi\\TodoApi.csproj",
+      "projectPath": "D:\\project\\csharp\\TodoApi\\TodoApi.csproj",
       "packagesPath": "C:\\Users\\Ali\\.nuget\\packages\\",
-      "outputPath": "D:\\projects\\csharp\\todoapi\\TodoApi\\obj\\",
+      "outputPath": "D:\\project\\csharp\\TodoApi\\obj\\",
       "projectStyle": "PackageReference",
       "configFilePaths": [
-        "C:\\Users\\Ali\\AppData\\Roaming\\NuGet\\NuGet.Config"
+        "C:\\Users\\Ali\\AppData\\Roaming\\NuGet\\NuGet.Config",
+        "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
       ],
       "originalTargetFrameworks": [
         "net7.0"
       ],
       "sources": {
+        "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
         "https://api.nuget.org/v3/index.json": {}
       },
       "frameworks": {
@@ -696,6 +762,10 @@
       "net7.0": {
         "targetAlias": "net7.0",
         "dependencies": {
+          "LiteDB": {
+            "target": "Package",
+            "version": "[5.0.16, )"
+          },
           "Microsoft.AspNetCore.Diagnostics.EntityFrameworkCore": {
             "target": "Package",
             "version": "[7.0.4, )"
@@ -703,6 +773,10 @@
           "Microsoft.EntityFrameworkCore.InMemory": {
             "target": "Package",
             "version": "[7.0.4, )"
+          },
+          "NanoId": {
+            "target": "Package",
+            "version": "[2.1.0, )"
           }
         },
         "imports": [
@@ -724,7 +798,7 @@
             "privateAssets": "all"
           }
         },
-        "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\7.0.101\\RuntimeIdentifierGraph.json"
+        "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\7.0.202\\RuntimeIdentifierGraph.json"
       }
     }
   }
